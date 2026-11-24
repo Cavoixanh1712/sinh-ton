@@ -1,0 +1,31 @@
+{
+  "source": "civic50.js",
+  "type": "procedural Three.js mesh models using existing I46 helpers",
+  "externalDownloads": false,
+  "models": [
+    "medical bed and bedside cabinet",
+    "ICU monitor",
+    "IV stand",
+    "surgical table and articulated lamp",
+    "medical trolley",
+    "medicine cabinet with glass doors and bottles",
+    "curved reception desk",
+    "filing cabinet and lockers",
+    "bunk bed with ladder",
+    "kitchen counter and sink",
+    "fire rescue clothing rack",
+    "hose reel and extinguishers",
+    "fire truck with wheels, windows, grille, beacons and roof ladders",
+    "holding-room bars and open iron gate",
+    "command monitor bank",
+    "stored game-weapon props"
+  ],
+  "collectibleKinds": [
+    "med",
+    "wat",
+    "plas",
+    "part",
+    "iron"
+  ],
+  "newCollectibleKinds": []
+}
