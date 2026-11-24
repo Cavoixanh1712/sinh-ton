@@ -1,0 +1,23 @@
+/* Hologram58: floating crafting display only. All crafting logic stays unchanged. */
+#craft{padding:0;background:rgba(3,10,15,.16);align-items:center;justify-content:center;isolation:isolate}
+#craft .c55-panel{position:relative;width:86vw;max-width:1180px;height:76dvh;max-height:640px;grid-template-columns:minmax(138px,19%) minmax(0,1fr) minmax(225px,32%);grid-template-rows:56px 82px minmax(0,1fr);border:1px solid #70dbea9c;border-radius:12px;background:linear-gradient(135deg,#102b37e8,#07151dea 68%);box-shadow:0 0 0 4px #122e3d38,0 0 28px #50d8f02e,0 24px 65px #0008,inset 0 1px #c6f8ff3b;overflow:hidden}
+#craft .c55-panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;background:linear-gradient(#8de9ff,#8de9ff) left top/42px 2px no-repeat,linear-gradient(#8de9ff,#8de9ff) left top/2px 30px no-repeat,linear-gradient(#8de9ff,#8de9ff) right bottom/42px 2px no-repeat,linear-gradient(#8de9ff,#8de9ff) right bottom/2px 30px no-repeat}
+#craft .c55-head{padding:6px 14px;background:#11334370;border-bottom:1px solid #5ca3b84d}
+#craft .c55-head h2{font-size:24px;color:#e3f9ff;text-shadow:0 0 12px #8adaee25}
+#craft .c55-anvil{width:34px;height:34px;min-width:34px}
+#craft .c55-close{background:#16313eab;border-color:#75b8c64a}
+#craft .c55-toolbar{background:#0c233063;border-bottom-color:#6397a332;padding:5px 7px}
+#craft .c55-nav{background:#1028345c;border-right-color:#6095a440;padding:7px 6px;gap:6px}
+#craft .c55-nav button{max-height:78px;background:linear-gradient(135deg,#24404b91,#102735b0);border-color:#6ba4b549;padding:6px;gap:6px}
+#craft .c55-nav button[aria-pressed=true]{background:linear-gradient(110deg,#5f4822c9,#332b1dad);border-color:#e8b64c}
+#craft .c55-results{background:#0c1d2730}
+#craft .c55-card{background:linear-gradient(145deg,#28414b80,#0d202da8);border-color:#5f8b9b59}
+#craft .c55-card.selected{background:radial-gradient(ellipse at center,#88632555,transparent 90%),#25251fcc;border-color:#efbe54}
+#craft .c55-detail{background:#091923a6;border-left-color:#6397a349;padding:12px}
+#craft .c55-description{color:#d0dce0}
+#craft .c55-material{background:#1e3641a1;border-color:#608c9947}
+#craft .c55-requirements{border-top-color:#6397a349}
+#craft .c55-footer{background:#0c202cf2;bottom:-12px}
+#craft .c55-search,#craft .c55-toolbar select{background:#061923a8;border-color:#699aa958}
+@media(max-width:800px){#craft .c55-panel{width:94vw;height:78dvh;max-height:600px;grid-template-columns:22% minmax(0,1fr) 34%;grid-template-rows:48px 78px minmax(0,1fr)}#craft .c55-head{padding:3px 7px;gap:6px}#craft .c55-head h2{font-size:20px}#craft .c55-anvil{width:28px;height:28px;min-width:28px}#craft .c55-toolbar{padding:4px 3px;grid-template-rows:32px 32px}#craft .c55-nav{padding:5px 3px;gap:4px}#craft .c55-nav button{padding:4px 2px}#craft .c55-detail{padding:8px 5px}#craft .c55-footer{bottom:-8px}}
+@media(max-height:500px){#craft .c55-panel{width:94vw;height:86dvh;grid-template-rows:44px 74px minmax(0,1fr)}#craft .c55-head h2{font-size:20px}#craft .c55-head{padding:1px 7px}#craft .c55-nav{gap:3px;padding:4px 3px}#craft .c55-nav button{padding:3px 2px;flex-basis:32px;min-height:32px}#craft .c55-nav b{font-size:14px}#craft .c55-toolbar{grid-template-rows:30px 30px}#craft .c55-card,#craft .c55-card.selected{height:74px}}

@@ -1,0 +1,16 @@
+/* REMOVE10: explicitly selected obsolete compounds and mining mountains only. */
+(()=>{'use strict';const S=SH,near=(a,b)=>Math.abs(a-b)<.02,mtPoints=[[471.5,-380],[394.5,-356],[473.5,-354],[603,-344],[599,-320],[477.5,-309.5],[519.5,-309.5],[477.5,-287.5],[525.5,-293.5]],stats={buildings:0,mountains:0,landmarks:0,lakes:0,props:0,decor:0,colliders:0,labels:0};let applied=false;
+const removed={buildings:[],mountains:[],landmarks:[],lakes:[],props:[]};
+function compact(a,fn){let n=0;for(let i=0;i<a.length;i++)if(fn(a[i]))a[n++]=a[i];a.length=n}
+function apply(){if(applied)return;applied=true;S.WORLD.ensureIds();const colliders=new Set(),box=(c,r)=>c.x0>=r[0]-.03&&c.x1<=r[2]+.03&&c.z0>=r[1]-.03&&c.z1<=r[3]+.03;
+ compact(S.blds,b=>{const match=(b.spr==='police'&&near(b.x0,429.5)&&near(b.y1,-364))||(!b.spr&&near(b.x0,494.5)&&near(b.y1,-293.5));if(!match)return true;removed.buildings.push(b);stats.buildings++;for(const c of b.cols5||[])colliders.add(c);const hr=S.V25.Z21.HRES.get(b),r=hr?.rb;const area=[Math.min(b.x0,r?.x0??b.x0),Math.min(b.y0,b._y0??b.y0,r?.y0??b.y0),Math.max(b.x1,r?.x1??b.x1),Math.max(b.y1,r?.y1??b.y1)];for(const c of S.cols)if(!c.c17&&!c.w15&&!c.ft&&box(c,area))colliders.add(c);return false});
+ compact(S.MT,m=>{if(!mtPoints.some(p=>near(m.x,p[0])&&near(m.y,p[1])))return true;removed.mountains.push(m);stats.mountains++;for(const c of S.cols)if(near(c.x0,m.x-m.w*.3)&&near(c.x1,m.x+m.w*.3)&&near(c.z0,m.y-1.3)&&near(c.z1,m.y))colliders.add(c);return false});
+ compact(S.LM,l=>{if(l[0]!=='radar'||!near(l[1],414.5))return true;removed.landmarks.push(l);stats.landmarks++;for(const c of S.cols)if(near(c.x0,l[1]-l[3]*.42)&&near(c.x1,l[1]+l[3]*.42)&&near(c.z0,l[2]-l[4]*.45)&&near(c.z1,l[2]))colliders.add(c);return false});
+ compact(S.LAKES,l=>{if(l.t!=='ice'||!near(l.x,401.5)||!near(l.y,-374))return true;removed.lakes.push(l);stats.lakes++;return false});
+ // Independent camp barricades belong to the deleted camp; unrelated items/AI are preserved.
+ const propTargets=[[419.5,-360,423,-356.5],[409.5,-354,425.5,-353],[589,-310,592.5,-306.5],[587,-306,603,-305]];
+ compact(S.props,p=>{if(!propTargets.some(a=>a.every((n,i)=>near(p[i],n))))return true;removed.props.push(p);stats.props++;for(const c of S.cols)if(near(c.x0,p[0])&&near(c.z0,p[1])&&near(c.x1,p[2])&&near(c.z1,p[3]))colliders.add(c);return false});
+ const decorTargets=[['barr',444.5,-360.5],['barr',454.5,-360.5],['sand',440,-360],['sand',459,-360],['barrel2',437.5,-361],['barrel1',461.5,-361],['crate',436,-360]];removed.decor=[];compact(S.DEC,d=>{if(!decorTargets.some(p=>d[0]===p[0]&&near(d[1],p[1])&&near(d[2],p[2])))return true;removed.decor.push(d);stats.decor++;for(const c of S.cols)if(near(c.x0,d[1]-d[3]*.4)&&near(c.x1,d[1]+d[3]*.4)&&near(c.z0,d[2]-.7)&&near(c.z1,d[2]))colliders.add(c);return false});
+ for(const z of S.ZN){const old=z.loc?.length||0;z.loc=(z.loc||[]).filter(l=>!['Đỉnh Bạch VânCăn Cứ Bạch Vân','Đỉnh Bạch VânĐài Quan Sát','Tháp Hư KhôngLâu Đài Đen'].includes(l.k));stats.labels+=old-z.loc.length}
+ for(const c of colliders)c.on=false;compact(S.cols,c=>!colliders.has(c));stats.colliders=colliders.size;S.V25.removeSelected10(removed);S.colsDirty();globalThis.Z21H?.resetHOV?.();globalThis.POI20?.invalidate?.();S.V25.gtRedraw?.(S.WB.x0,S.WB.y0,S.WB.x1,S.WB.y1);}
+globalThis.REMOVE10={apply,removed,stats,mtPoints};})();

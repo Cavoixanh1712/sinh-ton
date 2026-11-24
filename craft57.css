@@ -1,0 +1,56 @@
+/* Compact57: three fixed columns; small icons; detail opens on selection only. */
+#craft{padding:6px;overflow:hidden}
+#craft .c55-panel{display:grid;grid-template-columns:minmax(150px,19%) minmax(0,1fr) minmax(245px,32%);grid-template-rows:64px 88px minmax(0,1fr);width:min(1540px,100%);height:calc(100dvh - 12px);max-height:900px;overflow:hidden;border-radius:10px}
+#craft .c55-head{grid-column:1/-1;grid-row:1;padding:8px 16px;gap:12px}
+#craft .c55-head h2{font-size:28px}#craft .c55-head small{display:none}
+#craft .c55-anvil{width:40px;height:40px;min-width:40px}
+#craft .c55-close{width:44px;height:44px;min-width:44px}
+#craft .c55-toolbar{grid-column:2;grid-row:2;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:36px 32px;gap:5px;padding:6px 8px;min-width:0}
+#craft .c55-search{grid-column:1;grid-row:1;min-height:0;padding:0 6px;gap:4px}
+#craft input[type=search]{font-size:14px;min-height:0;padding:5px 0}
+#craft .c55-search span{font-size:22px}
+#craft .c55-toolbar select{min-height:0;padding:4px;font-size:12px}
+#craft #c55-category{grid-column:2;grid-row:1}#craft #c55-kind{grid-column:1;grid-row:2}#craft #c55-status{grid-column:2;grid-row:2}
+#craft .c55-work{display:contents}
+#craft .c55-nav{grid-column:1;grid-row:2/4;display:flex;flex-direction:column;gap:8px;padding:10px 8px;min-height:0;overflow-x:hidden;overflow-y:auto;border-right:1px solid #444039;border-bottom:0}
+#craft .c55-nav button{flex:1 0 44px;min-width:0;min-height:44px;max-height:100px;width:100%;padding:8px;gap:8px;border-radius:7px}
+#craft .c55-nav button>span{width:28px;font-size:26px}#craft .c55-nav b{font-size:14px}#craft .c55-nav em{font-size:12px}
+#craft .c55-results{grid-column:2;grid-row:3;min-height:0;min-width:0;overflow:auto;padding:5px 8px 10px}
+#craft .c55-listhead{font-size:12px;margin-bottom:6px}
+#craft .c55-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;max-height:none;overflow:visible;padding:2px}
+#craft .c55-card,#craft .c55-card.selected{min-height:0;height:112px;padding:7px 3px;border-width:1px;border-radius:7px;justify-content:center;gap:3px}
+#craft .c55-card .c55-art,#craft .c55-card .c55-native{width:48px;height:48px;min-width:0;max-width:100%;margin:0;flex-shrink:0}
+#craft .c55-card .c55-native img{width:44px!important;height:44px!important}
+#craft .c55-card .c55-symbol{width:48px;height:48px;line-height:48px;font-size:28px}
+#craft .c55-card>b{display:block;width:100%;font-size:14px;line-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#craft .c55-card .c55-tag{display:block;font-size:12px!important;line-height:16px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;margin:0}
+#craft .c55-detail{grid-column:3;grid-row:2/4;display:flex;min-height:0;min-width:0;overflow:auto;padding:14px;border-left:1px solid #494338;border-top:0}
+#craft .c55-detail[hidden]{display:none}
+#craft .c55-hero{display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px;align-items:center}
+#craft .c55-hero>.c55-art,#craft .c55-hero>.c55-native{width:64px;height:64px;max-width:100%;min-width:0;margin:0}
+#craft .c55-hero .c55-native img{width:56px!important;height:56px!important}
+#craft .c55-hero .c55-symbol{width:64px;height:64px;line-height:64px;font-size:36px}
+#craft .c55-hero>div{min-width:0}#craft .c55-hero h3{font-size:22px;margin:4px 0;overflow-wrap:anywhere}
+#craft .c55-hero small{font-size:12px}#craft .c55-description{font-size:14px;line-height:1.5;margin:12px 0}
+#craft .c55-requirements{padding-top:10px}#craft h4{font-size:16px;margin-bottom:8px}
+#craft .c55-material{padding:6px;gap:6px;min-height:42px;margin:5px 0}
+#craft .c55-material>b,#craft .c55-material strong{font-size:14px}
+#craft .c55-material>img,#craft .c55-material>span{width:24px;height:24px;font-size:20px}
+#craft .c55-material strong span{padding-left:2px}
+#craft .c55-footer{margin-top:auto;position:sticky;bottom:-14px;padding:12px 0 6px;background:#141819}
+#craft .c55-footer small{font-size:12px;margin-bottom:5px}
+#craft .c55-craft,#craft .c55-craft:disabled{min-height:44px;padding:8px;font-size:16px}
+@media(max-width:800px){
+#craft{padding:3px}#craft .c55-panel{height:calc(100dvh - 6px);grid-template-columns:22% minmax(0,1fr) 34%;grid-template-rows:52px 82px minmax(0,1fr)}
+#craft .c55-head{padding:4px 8px;gap:8px}#craft .c55-head h2{font-size:22px}#craft .c55-anvil{width:32px;height:32px;min-width:32px}
+#craft .c55-toolbar{padding:5px 4px;gap:4px;grid-template-rows:34px 32px}#craft .c55-search{padding:0 3px}#craft .c55-search span{display:none}
+#craft .c55-nav{padding:5px 3px;gap:5px}#craft .c55-nav button{position:relative;flex-direction:column;justify-content:center;text-align:center;padding:5px 3px;gap:3px;max-height:90px}#craft .c55-nav button>span{font-size:22px;width:auto}#craft .c55-nav b{font-size:14px;line-height:1.2}#craft .c55-nav em{display:none}
+#craft .c55-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+#craft .c55-results{padding:4px}#craft .c55-card,#craft .c55-card.selected{height:88px;padding:4px 1px;gap:2px}
+#craft .c55-card .c55-art,#craft .c55-card .c55-native{width:32px;height:32px}#craft .c55-card .c55-native img{width:30px!important;height:30px!important}#craft .c55-card .c55-symbol{width:32px;height:32px;line-height:32px;font-size:24px}
+#craft .c55-card .c55-tag{display:none}
+#craft .c55-detail{padding:8px 5px}#craft .c55-hero{grid-template-columns:1fr;gap:2px}#craft .c55-hero>.c55-art,#craft .c55-hero>.c55-native{width:40px;height:40px}#craft .c55-hero .c55-native img{width:36px!important;height:36px!important}#craft .c55-hero h3{font-size:18px}#craft .c55-hero small{display:none}
+#craft .c55-material{flex-wrap:wrap;gap:3px;padding:5px}#craft .c55-material>b{flex:1;min-width:0;overflow-wrap:anywhere}#craft .c55-material strong{width:100%;text-align:right}
+#craft .c55-footer{bottom:-8px}#craft .c55-footer small{display:none}
+}
+@media(max-height:480px){#craft .c55-panel{grid-template-rows:48px 76px minmax(0,1fr)}#craft .c55-nav button{flex-direction:row;gap:3px;padding:3px;max-height:none}#craft .c55-nav button>span{font-size:18px}#craft .c55-nav{gap:3px}#craft .c55-card,#craft .c55-card.selected{height:78px}#craft .c55-head h2{font-size:22px}}
