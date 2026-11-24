@@ -1,0 +1,93 @@
+--- before/AGENTS.md
++++ after/AGENTS.md
+@@ -22,3 +22,11 @@
+ ## Validation
+ 
+ Reports, screenshots and diagnostic JSON are under `CIVIC50_REVIEW/` in the handoff ZIP. The test browser uses software SwiftShader with a two-core CPU quota; its FPS is not a physical-phone measurement. Multiplayer tests are simulations, not a 20-player live server certification.
++
++## Content 52
++
++- `content52.js` runs after `interior46.js`. It adds only interior zombie encounters and store/mall grocery loot. Use the existing `z` and `b` enemy types and native 90-second respawn; do not alter ET or night monsters.
++- Encounter IDs are `inside52:<building-key>:<floor>:<type>:<slot>`. The `inside52` world SAVE extension restores initialized encounters and alive entities; the original WORLD dead queue owns respawn timers. Old interior zombie respawns are discarded only after that building has migrated. Original exterior entities are untouched.
++- Collision spawn candidate grids are lazily cached per renderer in a WeakMap; never load all 3D interiors at boot.
++- `milk52` and `sugar52` use STK/F5KEYS, existing finite interior46 claims, and a `groceries52` player SAVE extension. Icons are local SVG assets. No food-use effects or new recipes are authorized in this revision.
++- The existing offline-only civic pickup guard and multiplayer implementation remain unchanged. No live-server certification has been performed.
+--- before/CHANGELOG.md
++++ after/CHANGELOG.md
+@@ -20,3 +20,18 @@
+ 
+ - The current source has healing medicine, but no existing anti-contamination medicine/pollution meter was found. No substitute with a fake label or unrequested new mechanic was added.
+ - A live 20-player test and physical-phone FPS certification are not possible with the currently disabled multiplayer server and software-rendered test environment. Reports distinguish these from simulated checks.
++
++
++## 52 — Zombie trong công trình và vật tư thực phẩm
++
++- Áp dụng cho toàn bộ 31 công trình thành phố cùng loại; không sửa ngoại thất, quái đêm, BOSS hay chỉ số chiến đấu sẵn có.
++- Mỗi cửa hàng tiện lợi: 4 zombie thường + 1 tinh anh.
++- Mỗi TTTM: tầng 1 có 5 thường + 1 tinh anh, tầng 2 có 4 + 1, tầng 3 có 5 + 1.
++- Mỗi bệnh viện: tầng 1 có 4 thường, tầng 2 có 4 + 1, tầng 3 có 3 + 1.
++- Mỗi trường học: tầng 1 có 4 thường; tầng 2 có 4 + 1.
++- Mỗi trạm cứu hỏa: tầng 1 có 3 + 1; tầng 2 có 3 thường.
++- Mỗi đồn cảnh sát: tầng 1 có 4 + 1; tầng 2 có 3 + 1.
++- Khởi tạo một lần khi vào công trình, thay thế số zombie nội thất cũ để không cộng trùng. Vị trí sinh được chọn trên lưới đi được, tránh cửa vào và khoảng thông tầng; giữ hồi sinh 90 giây và chiến đấu gốc.
++- Thêm sữa tươi (5/ô) và đường (10/ô), biểu tượng SVG tự tạo theo mẫu. Chỉ phân bổ vào điểm vật tư chưa tìm của cửa hàng tiện lợi và khu thực phẩm TTTM; tầng điện tử TTTM giữ nguyên. Không tăng số điểm vật tư, không hồi lại hàng đã tìm.
++- Tích hợp túi đồ, dung lượng, vứt đồ, tên/biểu tượng và lưu nhân vật. Chưa thêm công thức hay hiệu ứng sử dụng thực phẩm.
++- Giữ sửa màu sprite 51 và các nội thất trước đó; không cập nhật LIVE.
+--- before/README_CLAUDE.txt
++++ after/README_CLAUDE.txt
+@@ -12,3 +12,5 @@
+ - Đã kiểm tra quái thường, tinh anh/BOSS và quái đêm đều vẽ có nội dung, dùng sRGB và không áp dụng tone mapping; dữ liệu HP/loại/vị trí/ID gốc không thay đổi.
+ - Không chỉnh model, chỉ số, hành vi, spawn, vật tư, save hay các phần khác. Bố cục CIVIC50 và các giới hạn multiplayer/điện thoại thật trong báo cáo vẫn giữ nguyên.
+ - Chưa triển khai LIVE.
++
++Latest local revision: CONTENT52. See CHANGELOG.md and CONTENT52_REVIEW. Do not publish without user authorization. Existing LIVE is unchanged.
+--- before/content52.js
++++ after/content52.js
+@@ -0,0 +1,32 @@
++/* Interior encounters and finite grocery loot. Reuses native enemy combat/respawn,
++   inventory, commands and SAVE registry; never changes exterior encounters. */
++(()=>{'use strict';const H=globalThis.SH,A=globalThis.I46;if(!H||!A)return;
++const X=H.X,S=H.S,W=H.WORLD,PREFIX='inside52:',done=new Set();
++const quotas={store:[[4,1]],mall:[[5,1],[4,1],[5,1]],hospital:[[4,0],[4,1],[3,1]],school:[[4,0],[4,1]],fire:[[3,1],[3,0]],police:[[4,1],[3,1]]};
++const defs={milk52:['Sữa tươi',5],sugar52:['Đường',10]};
++for(const[k,[name,stack]]of Object.entries(defs)){X.STK[k]=stack;H.F4.names[k]=name;if(!Number.isFinite(S[k]))S[k]=0;if(!globalThis.F5KEYS.includes(k))globalThis.F5KEYS.push(k)}
++H.SAVE.register({id:'groceries52',scope:'player',version:1,defaults:()=>({milk52:0,sugar52:0}),get:()=>({milk52:S.milk52,sugar52:S.sugar52}),set:v=>{for(const k in defs)S[k]=Number.isFinite(v[k])?Math.max(0,Math.floor(v[k])):0}});
++const oldIcon=H.F5.icon;H.F5.icon=(k,px)=>defs[k]?'<img src="icons/'+k+'.svg" alt="'+defs[k][0]+'" draggable="false" style="width:'+(px||34)+'px;height:'+(px||34)+'px;vertical-align:middle">':oldIcon(k,px);
++const oldCell=H.F5.ic;H.F5.ic=x=>defs[x.k]?H.F5.icon(x.k,34):oldCell(x);
++const oldFoodInfo=H.F5.info;H.F5.info=k=>defs[k]?'Vật tư thực phẩm tìm thấy trong cửa hàng tiện lợi và trung tâm thương mại.':oldFoodInfo(k);
++const oldInfo=H.F4.info;H.F4.info=k=>defs[k]?'Vật tư thực phẩm tìm thấy trong cửa hàng tiện lợi và trung tâm thương mại.':oldInfo(k);
++const oldKind=A.kind;A.kind=(type,l,it)=>{if(type==='store'||type==='mall'&&l!==1){const n=Number(String(it.id).replace(/\D/g,''))||0;const k=n%5;if(k===0)return'milk52';if(k===1)return'sugar52'}return oldKind(type,l,it)};
++const inside=(e,f)=>e.x>=f.b.x0&&e.x<=f.b.x1&&e.y>=f.b.y0&&e.y<=f.b.y1;
++function legacy(e,d){return (e.t==='z'||e.t==='b')&&!String(e.id).startsWith(PREFIX)&&d.floors.some(f=>inside(e,f)||(Array.isArray(e.reg)&&e.reg[0]>=f.b.x0&&e.reg[2]<=f.b.x1&&e.reg[1]>=f.b.y0&&e.reg[3]<=f.b.y1))}
++function remove(e){const i=H.ens.indexOf(e);if(i>=0)H.ens.splice(i,1);W.byId.e.delete(e.id)}
++function specs(d){const a=[];quotas[d.type].forEach(([z,b],l)=>{const f=d.floors[l];if(!f)return;for(const[t,n]of[['z',z],['b',b]])for(let i=0;i<n;i++)a.push({id:PREFIX+d.key+':'+l+':'+t+':'+i,t,l,reg:[f.b.x0+.6,f.b.y0+.6,f.b.x1-.6,f.b.y1-.6]})});return a}
++function hash(s){let v=2166136261;for(const c of s)v=Math.imul(v^c.charCodeAt(0),16777619);return v>>>0}
++const grids=new WeakMap();
++function points(scene,l){let cache=grids.get(scene);if(!cache){cache=new Map();grids.set(scene,cache)}if(cache.has(l))return cache.get(l);const q=[[40,35]],seen=new Set(['40,35']),out=[];for(let i=0;i<q.length;i++){const[u,v]=q[i],x=u*.5,z=v*.5;if(scene.walkable(x,z,l,.7)&&Math.hypot(x-20,z-17.5)>5)out.push({x,z});for(const[a,b]of[[1,0],[-1,0],[0,1],[0,-1]]){const j=u+a,k=v+b,key=j+','+k;if(j<2||j>78||k<2||k>38||seen.has(key)||!scene.walkable(j*.5,k*.5,l,.36))continue;seen.add(key);q.push([j,k])}}cache.set(l,out);return out}
++function locate(e,d,scene,used){const l=specs(d).find(s=>s.id===e.id)?.l;if(l===undefined)return;const f=d.floors[l].b,ps=points(scene,l);let p=null,start=hash(e.id)%Math.max(1,ps.length);for(let i=0;i<ps.length;i++){const c=ps[(start+i*37)%ps.length];if(!used.some(u=>u.l===l&&Math.hypot(u.x-c.x,u.z-c.z)<2.4)){p=c;break}}if(!p)p=ps[start];if(p){e.x=f.x0+p.x;e.y=f.y0+p.z;e.wx=e.x;e.wy=e.y;used.push({...p,l})}}
++function spawn(s,p){const e=X.mkE(s.t,s.reg);e.id=s.id;e.h2=true;if(p&&[p[1],p[2],p[3]].every(Number.isFinite)){e.x=p[1];e.y=p[2];e.wx=e.x;e.wy=e.y;e.hp=Math.max(1,Math.min(e.mhp,p[3]))}H.ens.push(e);W.byId.e.set(e.id,e);return e}
++function balance(d,scene){if(!quotas[d.type])return;W.ensureIds();for(const e of H.ens.slice())if(legacy(e,d))remove(e);const used=[];
++ if(!done.has(d.key)){done.add(d.key);for(const s of specs(d)){const e=spawn(s);locate(e,d,scene,used)}}else for(const e of H.ens)if(String(e.id).startsWith(PREFIX+d.key+':')){const s=specs(d).find(s=>s.id===e.id);if(!s)continue;const f=d.floors[s.l].b;if(!scene.walkable(e.x-f.x0,e.y-f.y0,s.l,.6))locate(e,d,scene,used)}
++}
++const enter=A.enter;A.enter=async function(...args){const ok=await enter(...args);if(ok&&A.scene){balance(A.scene.descriptor,A.scene);H.SAVE.save('inside52-enter',false)}return ok};
++W.on(ev=>{if(ev.type!=='enemy.respawn')return;const e=W.byId.e.get(ev.data?.id);if(!e)return;for(const d of A.buildings)if(done.has(d.key)&&legacy(e,d)){remove(e);return}if(A.scene&&String(e.id).startsWith(PREFIX+A.scene.descriptor.key+':'))locate(e,A.scene.descriptor,A.scene,[])});
++H.SAVE.register({id:'inside52',scope:'world',version:1,defaults:()=>({buildings:[]}),validate:v=>v&&Array.isArray(v.buildings),
++ get:()=>({buildings:A.buildings.filter(d=>done.has(d.key)).map(d=>({key:d.key,alive:H.ens.filter(e=>String(e.id).startsWith(PREFIX+d.key+':')).map(e=>[e.id,e.x,e.y,e.hp])}))}),
++ set:v=>{for(const e of H.ens.slice())if(String(e.id).startsWith(PREFIX))remove(e);done.clear();for(const row of v.buildings){const d=A.buildings.find(d=>d.key===row.key);if(!d||!d.floors.length||!Array.isArray(row.alive))continue;done.add(d.key);for(const e of H.ens.slice())if(legacy(e,d))remove(e);const ss=specs(d),ids=new Set();for(const p of row.alive){if(!Array.isArray(p)||ids.has(p[0]))continue;const s=ss.find(s=>s.id===p[0]);if(!s||![p[1],p[2],p[3]].every(Number.isFinite)||p[3]<=0||p[1]<s.reg[0]-.6||p[1]>s.reg[2]+.6||p[2]<s.reg[1]-.6||p[2]>s.reg[3]+.6)continue;ids.add(p[0]);spawn(s,p)}}}});
++globalThis.CONTENT52={revision:52,quotas,get initialized(){return[...done]},specs};
++})();
+--- before/icons/milk52.svg
++++ after/icons/milk52.svg
+@@ -0,0 +1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><defs><linearGradient id="w" x2="1" y2=".5"><stop stop-color="#fffdf1"/><stop offset="1" stop-color="#c6cfce"/></linearGradient><linearGradient id="b" x2="1" y2="1"><stop stop-color="#6bbbe8"/><stop offset="1" stop-color="#1666a8"/></linearGradient></defs><ellipse cx="130" cy="237" rx="71" ry="11" fill="#20190f" opacity=".25"/><path d="M68 77L92 28H170L194 72V224L165 242L65 228Z" fill="url(#w)" stroke="#465363" stroke-width="4" stroke-linejoin="round"/><path d="M68 77L92 28H170L146 80Z" fill="url(#b)"/><path d="M146 80L170 28L194 72V224L165 242Z" fill="#a8c3da"/><path d="M91 29V16H172V29" fill="#f4f2e5" stroke="#66798b" stroke-width="3"/><path d="M68 77L146 80L164 109L68 104Z" fill="#eef7ff"/><path d="M68 111L151 116V191L68 182Z" fill="#fcfbef"/><text x="107" y="140" font-family="serif" font-weight="bold" font-size="22" text-anchor="middle" fill="#14649a">Sữa</text><text x="109" y="165" font-family="serif" font-weight="bold" font-size="22" text-anchor="middle" fill="#14649a">Tươi</text><path d="M66 199Q86 168 108 189Q130 165 156 198L164 230L67 221Z" fill="#71a943"/><path d="M67 212Q109 185 160 215L164 231L67 221Z" fill="#c0d579"/><ellipse cx="113" cy="196" rx="22" ry="17" fill="#faf4e4" stroke="#665447" stroke-width="2"/><path d="M94 190Q87 178 100 181L107 190M125 188Q137 178 137 190L126 197M100 204L97 191L105 187L110 198" fill="#494139"/><ellipse cx="115" cy="203" rx="11" ry="7" fill="#d9b194"/><circle cx="107" cy="194" r="2"/><circle cx="123" cy="194" r="2"/><text x="143" y="224" font-family="sans-serif" font-size="13" fill="#154a76">1L</text><ellipse cx="122" cy="55" rx="14" ry="9" fill="#f8f9ef" stroke="#aab8c2" stroke-width="2"/><path d="M177 110V196M183 108V192" stroke="#427a9b" stroke-width="2" stroke-dasharray="3 3"/></svg>
+--- before/icons/sugar52.svg
++++ after/icons/sugar52.svg
+@@ -0,0 +1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><defs><linearGradient id="p" x2="1" y2=".4"><stop stop-color="#fffced"/><stop offset=".6" stop-color="#e8e3d7"/><stop offset="1" stop-color="#bbbcb7"/></linearGradient><linearGradient id="b" x2="1" y2="1"><stop stop-color="#61a9e1"/><stop offset="1" stop-color="#225b99"/></linearGradient></defs><ellipse cx="128" cy="237" rx="85" ry="12" fill="#332716" opacity=".25"/><path d="M67 22L180 24L177 58L200 218Q154 244 54 226L68 63Z" fill="url(#p)" stroke="#898781" stroke-width="3"/><path d="M68 24L180 25L175 39L70 40Z" fill="#fffef1"/><path d="M68 67Q121 91 180 56L184 89Q121 116 65 94Z" fill="url(#b)"/><path d="M174 61L184 89L200 218L178 231L171 100Z" fill="#b6bfbe" opacity=".7"/><text x="122" y="135" font-family="serif" font-weight="bold" font-size="28" text-anchor="middle" fill="#23639b" transform="rotate(-4 122 135)">Đường</text><path d="M62 191Q82 165 109 180Q142 155 191 184L199 218Q144 240 55 224Z" fill="#83ad43"/><path d="M91 207L131 161M112 214L151 171" stroke="#5e902c" stroke-width="13" stroke-linecap="round"/><path d="M91 207L131 161M112 214L151 171" stroke="#b5cd63" stroke-width="6" stroke-linecap="round"/><path d="M104 190L113 198M116 176L125 184M125 198L133 205M137 183L145 191" stroke="#e0d494" stroke-width="3"/><path d="M52 210L78 208L94 224L67 230Z" fill="#fffdf2" stroke="#ddd7c9"/><path d="M52 210V232L67 245V230M94 224V243L67 245V230" fill="#e7e4d8" stroke="#c4c0b8"/><path d="M166 220L188 215L205 228L181 234Z" fill="#fffdf2" stroke="#ddd7c9"/><path d="M166 220V239L181 250V234M205 228V247L181 250V234" fill="#e7e4d8" stroke="#c4c0b8"/></svg>
+--- before/index.html
++++ after/index.html
+@@ -1607,4 +1607,4 @@
+ <script src="border12.js?rev=13&build=51"></script>
+ <script src="border13.js?rev=14&build=51"></script>
+ <script src="water15.js?rev=15&build=51"></script>
+-<script src="clear16.js?rev=16&build=51"></script><script>CITY4_PLAN.apply();CITY5_PLAN.apply();NATURE7.apply();DECOR9.apply();REMOVE10.apply();BORDER11.apply();BORDER12.apply();BORDER13.apply();WATER15.apply();CLEAR16.apply();</script><script src="urban-runtime.js?build=51"></script><script src="world17.js?rev=35&build=51"></script><script src="rung29-data.js?rev=30&build=51"></script><script src="rung29.js?rev=30&build=51"></script><script src="vach35.js?rev=35&build=51"></script><script src="don31.js?rev=31&build=51"></script><script src="ve32.js?rev=32&build=51"></script><script src="kcn34-data.js?rev=36&build=51"></script><script src="kcn34.js?rev=41&build=51"></script><script src="bachvan40-texture.js?rev=40&build=51"></script><script src="elev38.js?rev=41&build=51"></script><script src="nuituyet38.js?rev=41&build=51"></script><script src="ai-brain21.js?rev=24&build=51"></script><script src="browser-ai21.js?rev=24&build=51"></script><script src="save-bridge-v6.js?rev=L2&build=51"></script><script src="night-monster44.js?rev=44&build=51"></script><script src="weather43.js?rev=44&build=51"></script><script src="rain-sound44.js?rev=44&build=51"></script><script src="interior46.js?build=51"></script></body></html>+<script src="clear16.js?rev=16&build=51"></script><script>CITY4_PLAN.apply();CITY5_PLAN.apply();NATURE7.apply();DECOR9.apply();REMOVE10.apply();BORDER11.apply();BORDER12.apply();BORDER13.apply();WATER15.apply();CLEAR16.apply();</script><script src="urban-runtime.js?build=51"></script><script src="world17.js?rev=35&build=51"></script><script src="rung29-data.js?rev=30&build=51"></script><script src="rung29.js?rev=30&build=51"></script><script src="vach35.js?rev=35&build=51"></script><script src="don31.js?rev=31&build=51"></script><script src="ve32.js?rev=32&build=51"></script><script src="kcn34-data.js?rev=36&build=51"></script><script src="kcn34.js?rev=41&build=51"></script><script src="bachvan40-texture.js?rev=40&build=51"></script><script src="elev38.js?rev=41&build=51"></script><script src="nuituyet38.js?rev=41&build=51"></script><script src="ai-brain21.js?rev=24&build=51"></script><script src="browser-ai21.js?rev=24&build=51"></script><script src="save-bridge-v6.js?rev=L2&build=51"></script><script src="night-monster44.js?rev=44&build=51"></script><script src="weather43.js?rev=44&build=51"></script><script src="rain-sound44.js?rev=44&build=51"></script><script src="interior46.js?build=51"></script><script src="content52.js?build=52"></script></body></html>

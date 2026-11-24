@@ -1,0 +1,9 @@
+{
+  "enterExit": true,
+  "fullBagPreservesStock": true,
+  "oneItemPerSource": true,
+  "repeatedSearchRejected": true,
+  "claimsReload": true,
+  "offlineGuardPreserved": true,
+  "browserVerified": false
+}

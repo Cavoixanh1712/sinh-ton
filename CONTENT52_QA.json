@@ -1,0 +1,1370 @@
+{
+  "buildings": [
+    {
+      "key": "city-tttm-158.3--362.85",
+      "type": "mall",
+      "quotas": [
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "milk52",
+        "sugar52",
+        "plas",
+        "wat",
+        "plas",
+        "part",
+        "part",
+        "part",
+        "part",
+        "part",
+        "milk52",
+        "sugar52",
+        "eat",
+        "eat",
+        "eat"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "city-hosp--162.113--384.85",
+      "type": "hospital",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21bv2",
+      "type": "hospital",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21bv3",
+      "type": "hospital",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21bv4",
+      "type": "hospital",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part",
+        "med",
+        "med",
+        "wat",
+        "plas",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21tttm1",
+      "type": "mall",
+      "quotas": [
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "milk52",
+        "sugar52",
+        "plas",
+        "wat",
+        "plas",
+        "part",
+        "part",
+        "part",
+        "part",
+        "part",
+        "milk52",
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52",
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21tttm2",
+      "type": "mall",
+      "quotas": [
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "plas",
+        "plas",
+        "wat",
+        "milk52",
+        "part",
+        "part",
+        "part",
+        "part",
+        "part",
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52",
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52",
+        "sugar52"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21tttm3",
+      "type": "mall",
+      "quotas": [
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 5,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "plas",
+        "plas",
+        "milk52",
+        "sugar52",
+        "part",
+        "part",
+        "part",
+        "part",
+        "part",
+        "eat",
+        "eat",
+        "eat",
+        "milk52",
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52",
+        "sugar52",
+        "eat"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca1",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca2",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca3",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca4",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca5",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca6",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ca7",
+      "type": "police",
+      "quotas": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part",
+        "plas",
+        "iron",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21pccc1",
+      "type": "fire",
+      "quotas": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 0,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "part",
+        "wat",
+        "iron",
+        "plas",
+        "part",
+        "wat",
+        "iron"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21pccc2",
+      "type": "fire",
+      "quotas": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 0,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "part",
+        "wat",
+        "iron",
+        "plas",
+        "part",
+        "wat",
+        "iron"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21pccc3",
+      "type": "fire",
+      "quotas": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 0,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "part",
+        "wat",
+        "iron",
+        "plas",
+        "part",
+        "wat",
+        "iron"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21pccc4",
+      "type": "fire",
+      "quotas": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 3,
+          "elite": 1,
+          "blocked": []
+        },
+        {
+          "normal": 3,
+          "elite": 0,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "plas",
+        "part",
+        "wat",
+        "iron",
+        "plas",
+        "part",
+        "wat",
+        "iron"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21ch1",
+      "type": "store",
+      "quotas": [
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Canvas2D"
+    },
+    {
+      "key": "c21ch2",
+      "type": "store",
+      "quotas": [
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Canvas2D"
+    },
+    {
+      "key": "c21ch3",
+      "type": "store",
+      "quotas": [
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Canvas2D"
+    },
+    {
+      "key": "c21ch4",
+      "type": "store",
+      "quotas": [
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Canvas2D"
+    },
+    {
+      "key": "c21ch5",
+      "type": "store",
+      "quotas": [
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Canvas2D"
+    },
+    {
+      "key": "c21ch6",
+      "type": "store",
+      "quotas": [
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "sugar52",
+        "eat",
+        "eat",
+        "eat",
+        "milk52"
+      ],
+      "renderer": "Canvas2D"
+    },
+    {
+      "key": "c21th1",
+      "type": "school",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "eat",
+        "wood",
+        "plas",
+        "wat",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21th2",
+      "type": "school",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "eat",
+        "wood",
+        "plas",
+        "wat",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21thcs1",
+      "type": "school",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "eat",
+        "wood",
+        "plas",
+        "wat",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21thcs2",
+      "type": "school",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "eat",
+        "wood",
+        "plas",
+        "wat",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21thpt1",
+      "type": "school",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "eat",
+        "wood",
+        "plas",
+        "wat",
+        "part"
+      ],
+      "renderer": "Three.js"
+    },
+    {
+      "key": "c21thpt2",
+      "type": "school",
+      "quotas": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "counts": [
+        {
+          "normal": 4,
+          "elite": 0,
+          "blocked": []
+        },
+        {
+          "normal": 4,
+          "elite": 1,
+          "blocked": []
+        }
+      ],
+      "loot": [
+        "wat",
+        "eat",
+        "wood",
+        "plas",
+        "wat",
+        "part"
+      ],
+      "renderer": "Three.js"
+    }
+  ],
+  "mallShot": true,
+  "hospitalShot": true,
+  "policeShot": true,
+  "fireShot": true,
+  "storeShot": true,
+  "schoolShot": true,
+  "preservation": {
+    "outside": true,
+    "exteriors": true
+  },
+  "persistence": {
+    "milk": 2,
+    "sugar": 3,
+    "alive": 4,
+    "dead": 1,
+    "ids": [
+      "inside52:c21ch1:0:z:0",
+      "inside52:c21ch1:0:z:1",
+      "inside52:c21ch1:0:z:2",
+      "inside52:c21ch1:0:z:3",
+      "inside52:c21ch1:0:b:0"
+    ],
+    "saveExt": 31
+  },
+  "loot": [
+    {
+      "k": "milk52",
+      "before": 2,
+      "after": 3,
+      "a": {
+        "ok": true,
+        "msg": "Tìm thấy Sữa tươi",
+        "inv": true,
+        "cmd": {
+          "v": 1,
+          "id": "qrzcqbaa:1",
+          "seq": 1,
+          "type": "interior46.search",
+          "actor": "qrzcqbaa",
+          "payload": {
+            "id": "c21ch1/i485",
+            "source": "i485",
+            "key": "c21ch1"
+          },
+          "t": 1795438457514,
+          "GT": 0
+        }
+      },
+      "repeat": {
+        "ok": false,
+        "reason": "gone",
+        "msg": "Vị trí này đã được tìm kiếm",
+        "cmd": {
+          "v": 1,
+          "id": "qrzcqbaa:2",
+          "seq": 2,
+          "type": "interior46.search",
+          "actor": "qrzcqbaa",
+          "payload": {
+            "id": "c21ch1/i485",
+            "source": "i485",
+            "key": "c21ch1"
+          },
+          "t": 1795438457518,
+          "GT": 0
+        }
+      },
+      "final": 3,
+      "cell": {
+        "k": "milk52",
+        "ic": "<img src=\"icons/milk52.svg\" alt=\"Sữa tươi\" draggable=\"false\" style=\"width:30px;height:30px;vertical-align:middle\">",
+        "nm": "Sữa tươi",
+        "n": 3
+      }
+    },
+    {
+      "k": "sugar52",
+      "before": 3,
+      "after": 4,
+      "a": {
+        "ok": true,
+        "msg": "Tìm thấy Đường",
+        "inv": true,
+        "cmd": {
+          "v": 1,
+          "id": "qrzcqbaa:3",
+          "seq": 3,
+          "type": "interior46.search",
+          "actor": "qrzcqbaa",
+          "payload": {
+            "id": "c21ch1/i481",
+            "source": "i481",
+            "key": "c21ch1"
+          },
+          "t": 1795438457518,
+          "GT": 0
+        }
+      },
+      "repeat": {
+        "ok": false,
+        "reason": "gone",
+        "msg": "Vị trí này đã được tìm kiếm",
+        "cmd": {
+          "v": 1,
+          "id": "qrzcqbaa:4",
+          "seq": 4,
+          "type": "interior46.search",
+          "actor": "qrzcqbaa",
+          "payload": {
+            "id": "c21ch1/i481",
+            "source": "i481",
+            "key": "c21ch1"
+          },
+          "t": 1795438457519,
+          "GT": 0
+        }
+      },
+      "final": 4,
+      "cell": {
+        "k": "sugar52",
+        "ic": "<img src=\"icons/sugar52.svg\" alt=\"Đường\" draggable=\"false\" style=\"width:30px;height:30px;vertical-align:middle\">",
+        "nm": "Đường",
+        "n": 4
+      }
+    }
+  ],
+  "cleanup": {
+    "geometries": 0,
+    "textures": 0,
+    "canvasRemoved": true,
+    "uiRemoved": true
+  },
+  "errors": []
+}

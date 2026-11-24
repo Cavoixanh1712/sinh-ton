@@ -1,0 +1,98 @@
+{
+  "mobileEmulation": true,
+  "physicalPhone": false,
+  "touch": [
+    {
+      "type": "hospital",
+      "moveDelta": 1.759999999999971,
+      "pinchZoom": true,
+      "fixedAngle": true,
+      "performance": {
+        "fps": 10.192814066087712,
+        "frames": 36,
+        "ms": 3531.89999999851,
+        "stats": {
+          "renderMs": 2.400000002235174,
+          "actorMs": 0.29999999701976776,
+          "fps": 9.632905075264325,
+          "p95ms": 149.89999999999782,
+          "drawCalls": 186,
+          "triangles": 26990,
+          "geometries": 179,
+          "textures": 15,
+          "contextsLost": false,
+          "actorCount": 5,
+          "claims": 0
+        },
+        "heap": 232339700
+      }
+    },
+    {
+      "type": "fire",
+      "moveDelta": 1.5999999999999737,
+      "pinchZoom": true,
+      "fixedAngle": true,
+      "performance": {
+        "fps": 9.587998082402395,
+        "frames": 34,
+        "ms": 3546.0999999992564,
+        "stats": {
+          "renderMs": 2.2999999970197678,
+          "actorMs": 0.30000000074505806,
+          "fps": 8.85087991539938,
+          "p95ms": 166.60000000000218,
+          "drawCalls": 172,
+          "triangles": 18906,
+          "geometries": 169,
+          "textures": 10,
+          "contextsLost": false,
+          "actorCount": 1,
+          "claims": 0
+        },
+        "heap": 150190371
+      }
+    },
+    {
+      "type": "police",
+      "moveDelta": 1.5999999999999737,
+      "pinchZoom": true,
+      "fixedAngle": true,
+      "performance": {
+        "fps": 10.025341836316771,
+        "frames": 36,
+        "ms": 3590.8999999970183,
+        "stats": {
+          "renderMs": 1.8999999985098839,
+          "actorMs": 0.10000000149011612,
+          "fps": 9.094639708084252,
+          "p95ms": 150,
+          "drawCalls": 173,
+          "triangles": 22286,
+          "geometries": 165,
+          "textures": 11,
+          "contextsLost": false,
+          "actorCount": 1,
+          "claims": 0
+        },
+        "heap": 173049718
+      }
+    }
+  ],
+  "errors": [],
+  "gpu": [
+    {
+      "vendorId": 65535,
+      "deviceId": 65535,
+      "vendorString": "Google Inc. (Google)",
+      "deviceString": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)",
+      "driverVendor": "SwANGLE",
+      "driverVersion": "5.0.0"
+    }
+  ],
+  "disposal": {
+    "geometries": 0,
+    "textures": 0,
+    "canvasRemoved": true,
+    "uiRemoved": true
+  }
+}

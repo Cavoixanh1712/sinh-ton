@@ -1,0 +1,54 @@
+{
+  "sprites": [
+    {
+      "type": "z",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 5540
+    },
+    {
+      "type": "z",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 5523
+    },
+    {
+      "type": "z",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 5523
+    },
+    {
+      "type": "b",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 12063
+    },
+    {
+      "type": "z",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 5580
+    },
+    {
+      "type": "b",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 12122
+    },
+    {
+      "type": "n",
+      "encoding": 3001,
+      "toneMapped": false,
+      "opaque": 17167
+    }
+  ],
+  "originalEnemyDataUnchanged": true,
+  "sRGB": 3001,
+  "cleanup": {
+    "geometries": 0,
+    "textures": 0,
+    "canvasRemoved": true,
+    "uiRemoved": true
+  }
+}

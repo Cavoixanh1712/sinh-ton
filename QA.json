@@ -1,0 +1,10 @@
+{
+  "layout": "3 fixed columns",
+  "columnsDesktop": 5,
+  "columnsPhone": 4,
+  "detailAfterClickOnly": true,
+  "noScrollIntoView": true,
+  "otherJSByteIdentical": true,
+  "recipesUnchanged": true,
+  "browserVerified": false
+}

@@ -1,0 +1,48 @@
+{
+  "combat": {
+    "id": "inside52:c21ch1:0:z:0",
+    "hp": 30,
+    "killed": true,
+    "count": 4,
+    "dead": [
+      "inside52:c21ch1:0:z:0",
+      "z",
+      89999,
+      [
+        6850.6,
+        1240.6,
+        6889.4,
+        1259.4
+      ]
+    ]
+  },
+  "respawn": {
+    "count": 5,
+    "hp": 30,
+    "walkable": true,
+    "copies": 1
+  },
+  "legacy": {
+    "removed": true,
+    "lookup": true
+  },
+  "fullBag": {
+    "reason": "full",
+    "claimed": false,
+    "count": 0
+  },
+  "reload": {
+    "milk": 3,
+    "sugar": 2,
+    "claimed": true,
+    "count": 5,
+    "ids": [
+      "inside52:c21ch1:0:z:1",
+      "inside52:c21ch1:0:z:2",
+      "inside52:c21ch1:0:z:3",
+      "inside52:c21ch1:0:b:0",
+      "inside52:c21ch1:0:z:0"
+    ]
+  },
+  "errors": []
+}

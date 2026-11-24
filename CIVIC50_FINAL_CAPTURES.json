@@ -1,0 +1,128 @@
+[
+  {
+    "type": "hospital",
+    "floor": 1,
+    "file": "CIVIC50_hospital_floor1.png",
+    "stats": {
+      "renderMs": 14.199999999254942,
+      "actorMs": 0.5,
+      "fps": 3.7976606410451157,
+      "p95ms": 583.3000000000011,
+      "drawCalls": 213,
+      "triangles": 27254,
+      "geometries": 186,
+      "textures": 18,
+      "contextsLost": false,
+      "actorCount": 5,
+      "claims": 0
+    }
+  },
+  {
+    "type": "hospital",
+    "floor": 2,
+    "file": "CIVIC50_hospital_floor2.png",
+    "stats": {
+      "renderMs": 5,
+      "actorMs": 0.5,
+      "fps": 3.6924894764049916,
+      "p95ms": 583.3000000000011,
+      "drawCalls": 275,
+      "triangles": 28666,
+      "geometries": 213,
+      "textures": 28,
+      "contextsLost": false,
+      "actorCount": 6,
+      "claims": 0
+    }
+  },
+  {
+    "type": "hospital",
+    "floor": 3,
+    "file": "CIVIC50_hospital_floor3.png",
+    "stats": {
+      "renderMs": 6.799999997019768,
+      "actorMs": 0.6000000014901161,
+      "fps": 3.455027064378671,
+      "p95ms": 399.90000000000146,
+      "drawCalls": 242,
+      "triangles": 35804,
+      "geometries": 244,
+      "textures": 36,
+      "contextsLost": false,
+      "actorCount": 6,
+      "claims": 0
+    }
+  },
+  {
+    "type": "fire",
+    "floor": 1,
+    "file": "CIVIC50_fire_floor1.png",
+    "stats": {
+      "renderMs": 4,
+      "actorMs": 0.19999999925494194,
+      "fps": 3.571556127004534,
+      "p95ms": 616.7000000000007,
+      "drawCalls": 187,
+      "triangles": 19066,
+      "geometries": 175,
+      "textures": 11,
+      "contextsLost": false,
+      "actorCount": 1,
+      "claims": 0
+    }
+  },
+  {
+    "type": "fire",
+    "floor": 2,
+    "file": "CIVIC50_fire_floor2.png",
+    "stats": {
+      "renderMs": 2.300000000745058,
+      "actorMs": 0.29999999701976776,
+      "fps": 3.4651298511817936,
+      "p95ms": 616.7000000000007,
+      "drawCalls": 208,
+      "triangles": 25006,
+      "geometries": 238,
+      "textures": 20,
+      "contextsLost": false,
+      "actorCount": 1,
+      "claims": 0
+    }
+  },
+  {
+    "type": "police",
+    "floor": 1,
+    "file": "CIVIC50_police_floor1.png",
+    "stats": {
+      "renderMs": 3.100000001490116,
+      "actorMs": 0.3999999985098839,
+      "fps": 3.7290663773815225,
+      "p95ms": 566.5999999999985,
+      "drawCalls": 192,
+      "triangles": 22484,
+      "geometries": 171,
+      "textures": 13,
+      "contextsLost": false,
+      "actorCount": 1,
+      "claims": 0
+    }
+  },
+  {
+    "type": "police",
+    "floor": 2,
+    "file": "CIVIC50_police_floor2.png",
+    "stats": {
+      "renderMs": 2.100000001490116,
+      "actorMs": 0.30000000074505806,
+      "fps": 3.7170115227357226,
+      "p95ms": 333.3000000000029,
+      "drawCalls": 214,
+      "triangles": 27110,
+      "geometries": 212,
+      "textures": 21,
+      "contextsLost": false,
+      "actorCount": 1,
+      "claims": 0
+    }
+  }
+]
